@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface JoueurRepo  extends JpaRepository<Joueurs,Integer> {
-    @Query ("SELECT COUNT(c) FROM Joueurs c  where  c.responsable_id= :id_responsable order by c.nombrebut desc ")
+    @Query ("SELECT c FROM Joueurs c  where  c.responsable_id= :id_responsable order by c.nombrebut desc ")
     List<Joueurs> findOrderByNombrebutDesc(@Param("id_responsable") int  id_responsable);
 }
